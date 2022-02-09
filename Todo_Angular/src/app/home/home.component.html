@@ -1,11 +1,12 @@
 <mat-card >
   <mat-card-content>
     <mat-card-title>Your To Dos</mat-card-title>
+    <p *ngIf="listOfTasks.length==0">No Tasks! Add some?</p>
     <mat-list *ngFor="let i of listOfTasks">
-      <mat-list-item *ngIf="listOfTasks.length<=0">No Tasks!</mat-list-item>
       <mat-list-item class="task" [routerLink]="['/task/',i.taskId]">
         {{i.title}}
       </mat-list-item>
     </mat-list>
+    <button type="button" [routerLink]="['/addTask']">Add Task</button>
   </mat-card-content>
 </mat-card>

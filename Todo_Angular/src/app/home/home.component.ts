@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.taskSvc.getAllTasks().then(result=>{
       this.listOfTasks = result
+      console.log(this.listOfTasks)
     })
   }
 

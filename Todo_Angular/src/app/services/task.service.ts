@@ -44,4 +44,8 @@ export class TaskService extends Dexie{
     return this.task.get(id) as Promise<ToDo>
   }
 
+  deleteTask(id:string){
+    this.task.delete(id)
+  }
+
 }

@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Route, Router, Routes} from "@angular/router";
 import {TaskService} from "../services/task.service";
 import {ToDo} from "../model";
 import {MainComponent} from "../main/main.component";
@@ -14,7 +14,7 @@ export class ShowTaskComponent implements OnInit, AfterViewInit {
 
   toDoObj!: ToDo
   taskID!: string
-  constructor(private activeRouter: ActivatedRoute, private taskSvc: TaskService) { }
+  constructor(private routes: Router,private activeRouter: ActivatedRoute, private taskSvc: TaskService) { }
 
   @ViewChild(MainComponent)
   mainComponent!: MainComponent
@@ -36,6 +36,22 @@ export class ShowTaskComponent implements OnInit, AfterViewInit {
       priority: this.toDoObj.priority,
       dueDate: moment(dateObj)
     })
+
+  }
+
+  async delete(){
+    try{
+      await this.taskSvc.deleteTask(this.taskID)
+      await this.routes.navigate(['/'])
+    }catch(Exception){
+      console.log("Something went wrong")
+    }
+
+
+
+  }
+
+  update(){
 
   }
 

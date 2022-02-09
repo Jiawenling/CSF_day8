@@ -24,13 +24,15 @@ import {MatListModule} from "@angular/material/list";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { ShowTaskComponent } from './show-task/show-task.component';
 import { HomeComponent } from './home/home.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     ShowTaskComponent,
-    HomeComponent
+    HomeComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
     <mat-card-title>Add To Do</mat-card-title>
   </mat-card-header>
 <mat-card-content>
-  <form [formGroup]="form" #formDirective='ngForm'  (ngSubmit)="processForm(); formDirective.resetForm()">
+  <form [formGroup]="form">
   <mat-form-field appearance="fill">
     <mat-label>Title</mat-label>
     <input matInput formControlName="title">
@@ -30,7 +30,7 @@
     </div>
     <mat-card-actions>
       <button [routerLink]="['/']">Back</button>
-      <button type="submit">Add Task</button>
+      <ng-content></ng-content>
     </mat-card-actions>
   </form>
 
