@@ -23,12 +23,14 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { ShowTaskComponent } from './show-task/show-task.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ShowTaskComponent
+    ShowTaskComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

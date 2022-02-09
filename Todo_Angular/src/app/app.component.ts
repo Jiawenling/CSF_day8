@@ -11,12 +11,10 @@ export class AppComponent implements OnInit{
   title = 'Todo_Angular';
   listOfTasks!: ToDo[]
 
-  constructor(private taskSvc: TaskService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.taskSvc.getAllTasks().then(result=>{
-     this.listOfTasks = result
-    })
+
   }
 }

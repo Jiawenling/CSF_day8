@@ -20,7 +20,7 @@ export class ShowTaskComponent implements OnInit, AfterViewInit {
   mainComponent!: MainComponent
 
   async ngOnInit() {
-    this.taskID = this.activeRouter.snapshot.params['taskId']
+    this.taskID = this.activeRouter.snapshot.params['id']
     console.log(this.taskID)
   }
 
@@ -31,7 +31,6 @@ export class ShowTaskComponent implements OnInit, AfterViewInit {
       console.log(">>>>>>not ready")
     }
     let dateObj = new Date(this.toDoObj.dueDate)
-    this.mainComponent.form.reset()
     this.mainComponent.form.setValue({
       title: this.toDoObj.title,
       priority: this.toDoObj.priority,

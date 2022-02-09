@@ -1,0 +1,13 @@
+mat-list-item{
+  border: lightsteelblue 2px solid;
+  border-radius: 5px;
+  color: darkgray;
+
+}
+
+mat-list-item:hover{
+  border: deeppink 2px solid;
+  box-shadow: 5px 5px lightpink;
+  color: deeppink;
+}
+

@@ -4,17 +4,6 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <div fxLayout="row" fxLayoutGap="2em" fxLayoutAlign="space-around">
-<mat-card >
-  <mat-card-content>
-    <mat-card-title>Your To Dos</mat-card-title>
-    <mat-list *ngFor="let i of listOfTasks">
-      <mat-list-item class="task" [routerLink]="['/task/',i.taskId]">
-        {{i.title}}
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-</mat-card>
-
 <div fxFlex="2 1 auto">
   <router-outlet></router-outlet>
 </div>
