@@ -25,13 +25,13 @@ export class ShowTaskComponent implements OnInit, AfterViewInit {
   }
 
   async ngAfterViewInit() {
-
     this.toDoObj= await this.taskSvc.getTaskFromId(this.taskID)
     console.log(this.toDoObj)
     if(this.toDoObj==undefined){
       console.log(">>>>>>not ready")
     }
     let dateObj = new Date(this.toDoObj.dueDate)
+    this.mainComponent.form.reset()
     this.mainComponent.form.setValue({
       title: this.toDoObj.title,
       priority: this.toDoObj.priority,

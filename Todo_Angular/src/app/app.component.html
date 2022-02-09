@@ -8,8 +8,8 @@
   <mat-card-content>
     <mat-card-title>Your To Dos</mat-card-title>
     <mat-list *ngFor="let i of listOfTasks">
-      <mat-list-item >
-        <div [routerLink]="['/task/',i.taskId]">{{i.title}}</div>
+      <mat-list-item class="task" [routerLink]="['/task/',i.taskId]">
+        {{i.title}}
       </mat-list-item>
     </mat-list>
   </mat-card-content>
