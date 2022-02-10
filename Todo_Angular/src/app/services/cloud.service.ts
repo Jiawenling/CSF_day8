@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {ToDo} from "../model";
+import {lastValueFrom} from "rxjs";
 
 
 @Injectable({
@@ -8,6 +10,12 @@ import {HttpClient} from "@angular/common/http";
 export class CloudService {
 
   constructor(private http: HttpClient) { }
+
+  saveTasks(toDoList:ToDo[]){
+    lastValueFrom(this.http.post('http://localhost:8080/saved', toDoList))
+      .then(results => {results})
+  }
 }
+
 
 

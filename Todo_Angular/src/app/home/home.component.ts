@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   saveToCloud(){
+    this.cloudSvc.saveTasks(this.listOfTasks)
     alert("Your tasks have been saved!")
 
   }
