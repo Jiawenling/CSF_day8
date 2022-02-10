@@ -33,14 +33,7 @@ export class MainComponent implements OnInit {
     })
   }
 
-  async processForm(){
-    let taskObj: Partial<ToDo> = this.form.value as ToDo
-    console.log(taskObj)
-    taskObj.dueDate = moment(this.form.value.dueDate).format("DD/MM/YYYY")
-    console.log(taskObj)
-    await this.taskSvc.saveTask(taskObj as ToDo)
-    this.form.reset()
-  }
+
 
 
 

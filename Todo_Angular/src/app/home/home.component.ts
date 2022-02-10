@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ToDo} from "../model";
 import {TaskService} from "../services/task.service";
+import {CloudService} from "../services/cloud.service";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   listOfTasks!: ToDo[]
 
-  constructor(private taskSvc: TaskService) { }
+  constructor(private taskSvc: TaskService, private cloudSvc: CloudService) { }
 
   ngOnInit(): void {
     this.taskSvc.getAllTasks().then(result=>{
@@ -19,5 +20,11 @@ export class HomeComponent implements OnInit {
       console.log(this.listOfTasks)
     })
   }
+
+  saveToCloud(){
+    alert("Your tasks have been saved!")
+
+  }
+
 
 }

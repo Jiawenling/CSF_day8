@@ -25,6 +25,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { ShowTaskComponent } from './show-task/show-task.component';
 import { HomeComponent } from './home/home.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { CloudComponent } from './cloud/cloud.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
     MainComponent,
     ShowTaskComponent,
     HomeComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    CloudComponent
   ],
   imports: [
     BrowserModule,

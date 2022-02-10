@@ -46,12 +46,17 @@ export class ShowTaskComponent implements OnInit, AfterViewInit {
     }catch(Exception){
       console.log("Something went wrong")
     }
-
-
-
   }
 
-  update(){
+  async update(){
+    let taskToUpdate = this.mainComponent.form.value as ToDo
+    try{
+      await this.taskSvc.updateTask(taskToUpdate, this.taskID)
+      await this.mainComponent.form.reset()
+      await this.routes.navigate(['/'])
+    }catch (Exception){
+      console.log("Something went wrong")
+    }
 
   }
 
