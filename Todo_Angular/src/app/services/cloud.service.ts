@@ -11,9 +11,8 @@ export class CloudService {
 
   constructor(private http: HttpClient) { }
 
-  saveTasks(toDoList:ToDo[]){
-    lastValueFrom(this.http.post('http://localhost:8080/saved', toDoList))
-      .then(results => {results})
+  saveTasks(toDoList:ToDo[]): Promise<any>{
+    return lastValueFrom(this.http.post('http://localhost:8080/saved', toDoList))
   }
 }
 

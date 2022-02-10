@@ -21,9 +21,16 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  saveToCloud(){
-    this.cloudSvc.saveTasks(this.listOfTasks)
-    alert("Your tasks have been saved!")
+  async saveToCloud(){
+    try{
+      await this.cloudSvc.saveTasks(this.listOfTasks)
+      await alert("Your tasks have been saved!")
+      await this.taskSvc.resetAll()
+      await this.ngOnInit()
+    }catch(Exception){
+      alert("Something went wrong!")
+    }
+
 
   }
 

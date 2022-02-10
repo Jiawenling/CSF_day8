@@ -25,14 +25,14 @@ export class TaskService extends Dexie{
   }
 
   async updateTask(toDoObj: Partial<ToDo>, taskID:string){
-    toDoObj.dueDate = moment(toDoObj.dueDate).format("DD/MM/YYYY")
+    toDoObj.dueDate = moment(toDoObj.dueDate).format("D/MM/YYYY")
     await this.task.update(taskID,toDoObj as ToDo)
     console.log("done saving>>>>>>>>>")
   }
 
   async saveTask(toDoObj: Partial<ToDo>){
     toDoObj.taskId = this.generateTaskId()
-    toDoObj.dueDate = moment(toDoObj.dueDate).format("DD/MM/YYYY")
+    toDoObj.dueDate = moment(toDoObj.dueDate).format("D/MM/YYYY")
     await this.task.put(toDoObj as ToDo, toDoObj.taskId)
     console.log("done saving>>>>>>>>>")
   }
@@ -49,6 +49,10 @@ export class TaskService extends Dexie{
 
   deleteTask(id:string){
     this.task.delete(id)
+  }
+
+  resetAll(){
+    this.task.clear()
   }
 
 }

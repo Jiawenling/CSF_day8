@@ -7,7 +7,9 @@
         {{i.title}}
       </mat-list-item>
     </mat-list>
-    <button type="button" [routerLink]="['/addTask']">Add Task</button>
-    <button type="button" (click)="saveToCloud()">Save to Cloud</button>
+    <mat-card-actions>
+      <button type="button" [routerLink]="['/addTask']">Add Task</button>
+      <button type="button" (click)="saveToCloud()">Save to Cloud</button>
+    </mat-card-actions>
   </mat-card-content>
 </mat-card>
